@@ -32,12 +32,9 @@ def _create_homeUI():
             with dpg.child_window(width=150, height=400, border=False):
                 dpg.add_spacer(height=280)
 
-                def _nuke_categories():
-                    pass
-
                 with dpg.group(horizontal=False):
-                    dpg.add_button(label="+", callback=View_HomeUI_Categories._add_category_name, user_data=[button_container, input_field])
-                    dpg.add_button(label="-", callback=View_HomeUI_Categories._remove_category_name, user_data=[button_container,input_field])
+                    dpg.add_button(label="+", callback=View_HomeUI_Categories._add_category, user_data=[button_container, input_field])
+                    dpg.add_button(label="-", callback=View_HomeUI_Categories._remove_category, user_data=[button_container,input_field])
                     dpg.add_button(label="!", callback=View_HomeUI_Categories._nuke_categories)
 
     dpg.create_viewport(title="Vertical Panes Example", width=820, height=540)
