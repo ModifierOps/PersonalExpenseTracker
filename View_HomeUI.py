@@ -1,4 +1,4 @@
-#Description:
+#Description: Responsible for the Home UI as a whole.
 from dearpygui import dearpygui as dpg
 import View_HomeUI_Categories
 

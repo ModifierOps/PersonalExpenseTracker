@@ -1,4 +1,4 @@
-#Description:
+#Description: Responsible for providing category operations in regards to the Home UI.
 from dearpygui import dearpygui as dpg
 
 
@@ -69,6 +69,13 @@ def _remove_category_name(sender, app_data, user_data):
 
 
 #-----------------------------------------------------------------------------------------
+def _nuke_categories(sender, app_data, user_data):
+    for category in list(categories):       
+        categoryButtonToRemove = categories.pop(str(category))
+        dpg.delete_item(categoryButtonToRemove["category_button_tag"])
+
+
+#-----------------------------------------------------------------------------------------
 def _popup_remove_category_failed(isInputEmpty):
 # First so the old corresponding window/handler instances are cleaned preventing leaks.
     if dpg.does_item_exist("tag_categoryDoesntExist_window"):
@@ -134,8 +141,3 @@ def _popup_add_category_failed(isInputEmpty):
         dpg.bind_item_handler_registry("tag_categoryAlreadyexists_window", "tag_categoryAlreadyexists_handler")
     except Exception as e:
         pass  # Silently ignore binding errors
-
-
-#-----------------------------------------------------------------------------------------
-def _nuke_categories():
-    pass

@@ -1,4 +1,4 @@
-#Description:
+#Description: Responsible for controlling the flow of the program.
 import View_HomeUI
 
 
